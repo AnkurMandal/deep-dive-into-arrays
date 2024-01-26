@@ -139,24 +139,105 @@
 // console.log(sum);
 
 
-//***************MAP***************
+//***************map***************
+
 // its syntax is exactly same as forEach except one thing
 // its return an array and its length is equal to source array length
-let nums = [10, 20, 30, 40, 50]
+// let nums = [10, 20, 30, 40, 50]
 
-let f = (element, index, nums) => {
-    return element + index;
-}
+// let f = (element, index, nums) => {
+//     return element + index;
+// }
 
-let r1 = nums.forEach(f);// does not return anything...
+// let r1 = nums.forEach(f);// does not return anything...
 
-let r2 = nums.map(f);//it collect the returning ans of each element present in the array
-console.log(r1, typeof r1);
-console.log(r2,typeof r2);
-
-
+// let r2 = nums.map(f);//it collect the returning ans of each element present in the array
+// console.log(r1, typeof r1);
+// console.log(r2,typeof r2);
 
 
-//filter
+//call back function:-
+// when a function is pass as an argument to another function is called as called call back function
 
-//reduce
+// let nums = [10, 20, 30, 40, 50]
+
+// nums.forEach(function (e, i, arr) { //call back function
+//     console.log(e, i, arr);
+// })
+
+// function temp(x) {
+// x =  () => {
+//     console.log("Ankur")
+// }
+// console.log(typeof x);
+// x();// call the x function
+
+// }
+// console.log(temp); //.... print the whole function of temp but not run it
+// temp(() => {
+//     console.log("Ankur")
+//  });//call back function
+
+// let nums = [10, 20, 30, 40, 50];
+// let r=nums.map((e, i, arr) => {
+//     return 10 + e - i;
+// })
+// console.log(r);
+
+// if you have one argument and one line of code that simply return than arrow function can be written as mention below:-
+// let nums = [10, 20, 30, 40, 50];
+// let r = nums.map(e => 2 * e);
+// console.log(r);
+
+
+
+//***********filter***********
+
+// Q) Given an array, return only even element
+
+// let arr = [9, 5, 6, 3, 2, 8];
+// let r = arr.filter(e => e % 2 == 0);
+// console.log(r);
+
+//***********reduce***********
+//its take two argument
+//first => function
+// second => function
+// its return only one number which is the result of last itration
+// let arr = [9, 5, 6];
+
+//the first call back function can take 3 argument
+// let r = arr.reduce((prev, curr, idx) => {
+//     // 1 9 0
+//     // 10 5 1
+//     // 16 6 2
+//     console.log(prev, curr, idx);
+//     return prev + curr + idx;
+// },1);
+// console.log(r);
+
+// function temp(x) {
+//     x();
+//     x();
+// }
+// temp(() => {
+//     console.log("Hello Ankur!!!");
+// })
+
+// Q)Find the sum of the array
+
+// let arr = [9, 5, 6];
+// let ans = arr.reduce((prev, curr) => prev + curr, 0);
+// console.log(ans);
+
+// let arr = [9, 5, 6];
+
+//if 2nd argument of reduce is not given,than it will skip the first itration and start directly with 2nd itration and take prev = first element, curr=2nd ele, idx=1
+// let r = arr.reduce((prev, curr, idx) => {
+//     // 9 5 1
+//     // 15 6 2
+//     // 23
+//     console.log(prev, curr, idx);
+//     return prev + curr + idx;
+// });
+// console.log(r);
